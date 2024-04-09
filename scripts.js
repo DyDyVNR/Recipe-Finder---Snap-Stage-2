@@ -23,17 +23,12 @@
  * 
  */
 
-// const fetchData = async () => {
-//     try {
-//         let response = await fetch("./data.json");
-//         let recipes = await response.json();
-//         console.log(recipes);
-//     } catch (error) {
-//         console.error("Error fetching Data:", error);
-//     }
-//   };
-//   fetchData();
-
+// recipes is an array of objects, each object represents a recipe and has the following properties:
+// - id: a unique number that identifies the recipe
+// - Title: the title of the recipe
+// - Ingredients: an array of strings that lists the ingredients
+// - Instructions: a string that describes how to make the recipe
+// - Image_Name: the name of the image file for the recipe
 let recipes = [
     {
       "id": 0,
@@ -447,6 +442,7 @@ function editCardContent(card, newDescription) {
 // This calls the addCards() function when the page is first loaded
 document.addEventListener("DOMContentLoaded", showCards);
 
+// This function sorts the cards in ascending or descending order
 function sortCards(ascending = true) {
     // sort by title
     recipes.sort((a, b) => a.Title.toLowerCase().localeCompare(b.Title.toLowerCase()));
@@ -458,6 +454,7 @@ function sortCards(ascending = true) {
     showCards();
 }
 
+// This function searches for a recipe based on the search term
 function searchRecipe() {
     const searchInput = document.getElementById("search");
     const searchTerm = searchInput.value.toLowerCase();
@@ -495,7 +492,7 @@ function closeForm() {
     document.getElementById("addForm").style.display = "none";
 }
 
-// Add the recipe to the recipes array
+// This function adds a new recipe to the array
 function addRecipe(e) {
     // Prevent the default form submission so that the page does not reload
     e.preventDefault();
