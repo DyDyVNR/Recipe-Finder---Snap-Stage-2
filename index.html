@@ -2,37 +2,60 @@
 <html>
 
 <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles">
+    <title>Recipes | Home</title>
+    <meta name="description" content="A Catalog of Recipes">
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
 </head>
 
 <body>
     <header class="main-header">
-        <h1 class="title">LA TV Shows</h1>
+        <h1 class="title">Recipes of Delicious Dishes</h1>
     </header>
+
+    <div class="search-container">
+        <input type="text" id="search" onkeyup="searchRecipe()" placeholder="Search your favourite dish...">
+        <div class="sort-container">
+            <label>Sort</label>
+            <div>
+                <button onclick="sortCards(true)">Ascending</a>
+                <button onclick="sortCards(false)">Descending</a>
+            </div>
+        </div>
+        <br>
+        <button  onclick="openForm()">Add My Own Recipe</button>
+        <div id="addForm" style="display: none;">
+            <div>
+                <span class="close" onclick="closeForm()">&times;</span>
+                <h2>Add Recipe</h2>
+                <form>
+                    <label for="recipeName">Recipe Name:</label><br>
+                    <input type="text" id="recipeName" name="recipeName"><br>
+                    <label for="recipeImage">Recipe Image:</label><br>
+                    <input type="file" id="recipeImage" name="recipeImage" accept="image/*"><br>
+                    <label for="ingredients">Ingredients:</label><br>
+                    <textarea id="ingredients" name="ingredients" rows="4"></textarea><br>
+                    <label for="instructions">Instructions:</label><br>
+                    <textarea id="instructions" name="instructions" rows="4"></textarea><br>
+                    <button onclick="addRecipe(event)">Add Recipe</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <div id="card-container">
         
     </div>
     <div class="card" style="display: none;">
         <div class="card-content">
-            <h2>TV Show Title</h2>
-            <img src="" alt="TV Show Poster">
+            <h2></h2>
+            <img>
             <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
             </ul>
         </div>
     </div>
+
     <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Quote!
-        </button>
-        <button onclick="removeLastCard();">
-            Remove A Card!
-        </button>
+        <a href="https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images/data" target="_blank"> Data Source: Kaggle (Food Ingredients and Recipes Dataset with Images)</a>
     </div>
 </body>
 
