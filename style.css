@@ -62,13 +62,14 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
-    overflow: auto;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px) scaleX(1.03);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    overflow: auto;
 }
 
 .card-content {
